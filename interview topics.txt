@@ -1,0 +1,77 @@
+basics of ai and ml
+what is diff btw ai and ml
+where we usee them
+
+linear data structures implementation
+non linear DS implementation and aloso traversal of that DS
+applications of Data structure
+what is meant by tree and graph and representaion of the graph,tree
+
+database
+normalization
+why we need normalization lik 1nf,2nf,3nf,bcnf
+acid properties
+joins
+
+oops concepts
+
+bubble sort
+selection sort
+inseertion sort
+merge sort
+quick sort
+code and time complexity
+binary search
+
+square root of a number
+count the number of occurrences of each charcter in a given string
+sort 0s,1s,2s
+max sum subarray(kadanes algo)
+element that occur once in the array all other are twice
+loop and middle in the linked list
+reverse the linked list
+implement stack using array/queue using array
+next greater element
+
+
+
+
+intro
+what are the types ogf join
+diff bw 2nf and 3nf
+acid properties
+2 sql quiers subquries
+pointers y there are not present in java or python
+reverse the double linked list
+oops concepts
+project in detail
+wht is ml
+supervised and unsupervised
+how do u clean data and what is the procedure
+explain navie bayes,random forest,decision trees,bagging,confusion matrix,underfitting and overfitting,varience and bias
+what if u do if there are null values in the age col
+classfication and example
+key features of python
+diff bt list and tuple
+y python is interpeted language
+expection handling
+packages and modules
+truncate query
+what are apis adn methods like post get put delete
+diff btw tuptle and set
+bitwise operators and tell about bitwise operators
+double linked list and deleteing node in double linkindin list
+cloud computing
+osi model in cn
+interpreter and compilier
+MR and HR qns
+what makes me different from other people in hiring
+why would u like to join TCS
+
+
+
+wht is ur project
+wht problem you solved
+how you solved the problem
+technology used
+role

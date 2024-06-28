@@ -1,0 +1,94 @@
+pwd -- > current working directory
+
+git status
+git config --global user.name "hemanth burra"
+git config -- global user.email "hemanthburra789z2gmail.com"
+
+respostory --> this contains all the code
+its like a folder not only code all the things related to project
+
+2 copies of project
+local
+cloud
+mkdir test_repo // crreating the repo
+cd test_repo
+
+intallize the folder with git:
+--------------------------------
+git init -- > repositary will track by git 
+git status
+
+git add file_name
+
+while using this command these file will go to staging area
+
+if the files want to commit then all the files
+which aare in the staging area will commit at a time 
+as we cant control the how many files we want to commit
+
+thus why we add only the files we commit first to the staging area
+so that these files can be commited to repo at one time 
+
+git status --> tells about the untracked files in the directory which are not added to the git
+
+git add . --> adds all the untracked files in the directory to the staging area
+// it is not recommeded 
+
+gi reset -->undo the process
+
+git rm --cached <file> --> to unstage
+
+git commit -m "initial commit"
+
+git log --> shows the commited history
+
+git diff file_name --> shows the difference btw the local directory file and the staging area file
+if the file is modified then it works
+because the file is not added so that the git status will tell u the modified files
+
+git status will tell u what files are changed
+git diff will tell u what/which part is the change in the file
+
+.gitignore 
+in this file we can enter the file or folders names so that these files are not tracked by the git
+we can add them by using cat command
+
+git branch:
+------------
+parallel version of a repositor that allows developers to work on separate features or bug fixes without affecting  the main
+code base
+
+git branch new_branch -->create the new branch
+git branch -a -->list the all the branches
+git switch new_branch -->for swiching to branches
+git checkout -b another_branch -->creates and switches the branch
+checkout can also used to check the praticular commit also
+
+git remote:
+------------
+git remote add origin <url of repository of github>
+git remote
+
+git push --set-upstream origin another_branch(current branch_name)
+git push origin(remote_name) another_branch(current branch)
+
+popup will occur to signin to sign in github
+
+git pull origin new_branch
+it helps to pull the code from github to local files where the file is edited in the github
+
+git clone <url> -->clone the repository
+git branch -D new_branch -->forcefully delete the branch
+
+delete the remote branch then:
+git push origin --delete new_branch_name
+
+
+
+
+
+
+
+
+
+

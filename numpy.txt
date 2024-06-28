@@ -1,0 +1,180 @@
+numerical python:
+-----------------
+working on arrays
+consists of multidimestional array objects and a collection of
+routines for processing the aray
+list -->slow
+array -->fast
+
+installation of numpy:
+--------------------
+pip install numpy
+import numpy
+print(numpy.__version__)
+modules --> functions unthayi
+
+numpy is the module and we will the functions which are in the numpy module
+as is the alias keyword
+
+import numpy as np
+print(np.__version__)
+to check the version
+
+//creating the arrays:
+-----------------------
+array()
+asarray() with nditer()
+from buffer()
+fromiter()
+
+a = np.array([10,20,30]) --> space separated values
+a = np.array([10,20,30][40,30,50]) // 2d
+print(a[0][1])
+
+collections of 2 dimentions is 3d array
+
+a = [10,20,30]
+b = np.asarray(1,dtype=float)
+
+a = [[10,20],[30,40]]
+b = np.asarray(a,dtype=int,order="C") // row major order
+c = np.asarray(a,dtype=int,order="F") // column major order
+print(b)
+
+for i in np.nditer(b):
+	print(i)
+
+print(b) // 10 20 30 40 row major order
+//10 30 20 40 column major order 
+this difference can be observed by using the nditer() while using the asarray() function
+
+a = b"welcome to numpy"
+
+b = np.frombuffer(a,dtype="S1",count=10,offset=9)
+
+offset tells from where to start 
+count tells about how many elements 
+
+np.fromiter(a,dtype=int,count=3) //for list
+
+initializing array
+------------------
+zeros()
+ful()
+random.rand()
+ones()
+eye()
+numerical ranges:
+arange()
+linspace()
+logspace()
+
+a = np.zeros(3) //1d
+np.zeros([2,3]) //2d 2 rows 3 cols
+np.zeros([2,3,3]) //3d
+
+np.full([2,3],1) //2d array with 1
+dimention value
+
+np.random.rand(2,3)
+random values from 0 to 1 will fill the array
+
+np.ones([2,3]) //by default float
+
+np.eye(2) // diagional elements 1 remaining 0 by default float
+
+a = np.arange(10,20,1)
+print(a)
+prints from 10 to 19 with 1 difference
+ we can also change the datatype
+
+a = n.arange(10,70,10) // start end stepsize
+[10 20 30 40 50 70]
+a.reshape(2,3) // divides the array into 2 rows and 3 cols
+array([[10 20 30]
+       [40 50 60]])
+
+np.linspace(10,100,10) //default float includes 100 also
+
+np.linspace(10,100,10,endpoint = False,retstep = True) // removes the end point .
+default endpoint = True, retstep = False
+start end intervals
+intervals --> divides the array with intervals value
+retstep used to divide the array into equal values of 10 from 10 to 100
+ex:
+ 10 19 28 37 46 55 64 73 82 91
+for every value stepsize is 9
+
+(array([10.,19.,28.,37.,46.,55.,64.,73.,82.,91.,]),9.0)
+its the output
+we can also change the datatype
+
+np.linspace(1,100,20,endpoint=False,retstep=True)
+
+np.logspace(0,10,10,base=2) default base=10
+
+a = np.array(10,100,10)
+a = a.reshape(3,3)
+np.size(a)
+np.shape(a)
+a.dtype
+ 
+array operators:
+----------------
+accessing and slicing operaations:
+copy() b.copy(a)
+view() c = b.view() --> same as copy but acts as reference
+sort() np.sort(a,axis=0)-->col wise, axis = 1-->row wise
+reshape() a.reshape(2,3)
+append() np.append(a,b)-->forms 1d array
+insert() np.insert(a,3,[35.45]) forms 1d arrayname,index,single element -nrml multiple elements-subscript
+delete() np.delete(a,2) -- > forms 1d arrayname,index
+concatenate() np.concatenate((a,b),axis=0)
+stack() res = np.stack((a,b),axis=1)-- > default axis is 0,concatenates as a as a array and b as ana array and both are formed in the array
+vstack() vertical stack -->concatinate as vertical items
+hstack() horizonatl stack --> concatimate col axis
+dstack() --> concatinate same index elements
+split() np.split(x,2) --> divides the array to no of divisions(ex:2) equally
+where() np.where(a==20),np.where(a%20==0) --> gives the index of the element in the array, we can also give conditions
+searchsorted() np.searchsorted(a,20) np.searchsorted(a,[20,30]) -->gives indexs
+
+we can create our own datatype
+d = np.dtype = ( [('name','S1') , ('perc',float)] )
+marks = np.array([('ramu',95.0),("hari",75.4),("raju",98.3)],dtype = d)
+np.sort(marks,order="name") -> sort based on name
+order = "perc" -->sort by perc
+
+arithmetic opertions:
+---------------------
+add()
+substract()
+multiply()
+divide()
+exp()
+sqrt()
+
+comparision :
+
+np.array_equal(a,b) -->return bool
+a==b -->direct ga evachu
+
+array Functions:
+------------------
+sum() np.sum(a),np.sum(a,axis=0)
+min() np.min(a) -->gives min in whole array,np.min(a,axis=0) -->col wise min gives
+max() np.max(a),np.max(a,axis=1)
+mean() same
+median() same
+var() same
+std() same--standarf deviation
+
+
+
+
+
+
+
+
+
+
+

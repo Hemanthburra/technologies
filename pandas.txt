@@ -1,0 +1,150 @@
+pandas:
+--------
+introduction
+installation of pandas
+importing pandas
+how to download dataset
+creating dataframe
+indexing&slicing
+understanding loc & iloc
+sorting dataframe
+manipulating dataframe
+removing duplicates
+handling missing data
+data filtering and conditional changes
+export dataframe
+
+introduction:
+--------------
+data manupilation and analysis
+tabular data meda work chesthadhi
+capable of offering in-memory 2d table object called dataframe
+most widely used pandas data structures are the series and the dataframe
+simply,a series is similar to a single column of data while a dataframe 
+is similiar to a sheet with rows and columns
+series -->1d
+dataframe-->2d
+panel-->3d
+
+installation of pandas:
+-----------------------
+pip install pandas
+print(pandas.__version__)
+
+how to download dataset:
+------------------------
+kaggle.com
+csv
+xlsx
+
+creating dataframe:
+-------------------
+load the data from excel file
+read_excel("file_location")
+load the data from csv file
+read_excel("file_location")
+create dataframe using dictionary
+create dataframe using list of tuples
+
+import pandas as pd
+d = pd.read.excel("file_loaction \\ is used in the loaction path",sheet_name="sheet_name") // sheet_name is temperary
+df = pd.DataFrame(d)
+
+di = {"name":["abc","def"],"Roll_no":[1,2,3],"perc":[90.5,89.0,23.4]}
+df = pd.DataFrame(di) -->using dictionary
+
+l = [("abc",10,39.3),("cdb",2,78.0)]
+df = pd.DataFrame(l) -->using tuples
+
+
+indexing & slicing:
+---------------------
+df.head() ->5 records default
+df.head(2) ->2 records
+df.tail() ->5 records default
+df.tail(2) ->2 records
+df.describe()
+df.shape ->gives info about shape of data
+df[start:stop:interval] -> slicing
+df["col_name"] ->gives paticular col
+df[["col1","col2"]]-->inner list forms as the one index and finds the index in the df
+df[["col1","col2"]][start:stop:step]
+for rec in df.iterrows():
+	print(res)
+prints all the records in the form of tuple
+
+understanding loc & iloc:
+-------------------------
+Understanding LOC[] (stop index included)
+-------------------------------------------
+df.loc[row_no]
+df.loc[row_no,["col1,"col2",--]]
+df.loc[start:stop]
+df.loc[start:stop,"col_name"]
+df.loc[start:stop,["col1","col2"--]]
+df.loc[start:stop,"col1":"coln"]
+
+in iloc -->>last index is excluded
+nrmlly operates as the slicing index type
+and col_number is used in the place of col_name
+
+sorting dataframe:
+------------------
+df.sort_values("col_name")
+df.sort_values("col_name",ascending=False) ->descending order
+df.sort_values(["col1","col2"])
+df.sort_values(["col1","col2"],ascending=[0,1])
+
+manipulating dataframe:
+-----------------------
+adding col:
+-----------
+df["Total"] = 0 -->its adds the total column at the last for all records
+df["Total"] = df["Maths"]+df["Telugu"]
+
+removing col:
+-------------
+df["Perc"] = "Pass/Fail"
+df.drop(columns="col_name") -->tempery delete
+df.drop(columns="col_name",inplace=True) -->permenant delete
+
+Removing Duplicates:
+---------------------
+df.duplicated() -->returns bool
+df.drop_duplicates() -->remove dulpicates temperarly
+df.drop_duplicates(inplace=True) -->permenant delete
+
+Handling Missing Data:
+----------------------
+df.dropna()
+df.dropna(inplace=True)
+
+fill with default values
+-------------------------
+df.fillna(default_value)
+
+
+data filtering and conditional changes:
+--------------------------------------
+df.loc[simple_condition]
+df.loc[df["Maths"]>85] -->example
+df.loc[(df["maths"]>85) & (df["Maths"]<60)] ->compound conditions
+df.loc[simple_condition.str.contains(str)]
+df.loc[simple_condition.str.stratswith(str)]
+df.loc[simple_condition.str.endwih(str)]
+df.loc[df["percentage"]>=70,["grade"]] = "Distiction"
+
+
+export dataframe:
+-------------------
+df.to_excel(PATH)
+df.to_excel(PATH,index=False)
+df.to_csv(PATH)
+df.to_csv(PATH,index=False)
+
+
+
+
+
+ 
+
