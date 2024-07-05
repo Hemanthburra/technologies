@@ -529,6 +529,7 @@ as ROLLBACK command is used to roll back the query operation and commit them
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -538,3 +539,5 @@ as ROLLBACK command is used to roll back the query operation and commit them
 
 
 
+=======
+>>>>>>> f538868f270bf191f39d65ca5805dd8ca3cf7b67
