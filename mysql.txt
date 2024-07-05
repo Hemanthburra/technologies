@@ -431,3 +431,101 @@ Consider an e-commerce system where a customer places an order, and the system n
 Once this transaction is committed, the changes must persist even if the system crashes immediately afterward. This means that the new order record and the updated stock count should be permanently saved and retrievable after the system restarts, ensuring durability.
 
 In summary, these examples demonstrate how each ACID property ensures robust and reliable transaction processing in a DBMS, maintaining data integrity, reliability, and consistency even in complex and concurrent environments.
+
+
+STORED PROCEDURES:
+- to reference complex query
+- its like functions in the programming language
+syntax:
+
+1)
+delimiter //
+create procedure employee_procedure()
+begin
+select id,name,age from employee
+where gender = 'male' and age < 19;
+end //
+
+call employee_procedure()
+
+
+2)
+
+delimiter //
+create procedure parameter_procedure(
+	p_gender varchar(30),
+	p_age int
+)
+begin
+select id,name,age from employee
+where gender = p_gender and age < p_age;
+end //
+
+
+call parameter_procedure('male',20)
+call parameter_procedure('female',30)
+
+Declare [variableName] dataType(size) [default values];
+set variableName = value;
+
+create procedure (procedure_name) ()
+begin
+declare count int default 0;
+select count(*) into count from users;
+select count;
+end//
+
+parameters 3 types
+IN 
+OUT
+INOUT
+
+create procedure countbylast(IN l_name varchar(255),OUT count_l int)
+begin
+select count(*) into count_l from users where last_name=l_name;
+end//
+
+call countbylast('Tiwari',@CountLast);
+select @CountLast;
+
+drop procedure (procedure_name);
+show procedure status where db = 'learn' -->'(database_name)'
+
+TRIGGERS:
+-----------
+- used mainly at the insert,update,delete
+checks data,handles errors,auditing tables
+
+syntax:
+
+create trigger (trigger_name)
+before/after update on (table_name)
+for each row
+set (col_name) = some condition;
+
+
+-these trigger query automatically triigers the qury while any data is added in the 
+table which is mentioned in the trigger query
+- in the triggers we use the new/old keywords which are used in the set or condition
+- new is used while any new data is come across the table
+- old is used while to access the old data which is already exists in the table 
+
+
+ex:
+create trigger before_hourly_pay_update
+before update on employees
+for each row
+set new.salary = (new.hourly_pay * 2080);
+
+
+autocommit,commit,rollback:
+------------------------
+set AUTOCOMMIT = OFF; -->by default it is on
+so while it is false the query is not saved untill we commit the changes
+so error we will delete the entire table where we forgot about the where class
+so at that time it is used
+
+as ROLLBACK command is used to roll back the query operation and commit them
+
+
+
