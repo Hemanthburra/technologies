@@ -53,7 +53,7 @@ git diff will tell u what/which part is the change in the file
 in this file we can enter the file or folders names so that these files are not tracked by the git
 we can add them by using cat command
 
-git branch:
+git branch:git 
 ------------
 parallel version of a repositor that allows developers to work on separate features or bug fixes without affecting  the main
 code base
@@ -84,7 +84,7 @@ delete the remote branch then:
 git push origin --delete new_branch_name
 
 
-
+git orgin
 
 
 
